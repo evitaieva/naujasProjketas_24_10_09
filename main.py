@@ -1276,7 +1276,8 @@ for zodis in zodziai:
     print(f'{zodis}: {len(zodis)}')
 
 print("hi")
-print("hi2")
+print("hi4")
+print("hi")
 print("hi")
 print("hi")
 print("hi")
