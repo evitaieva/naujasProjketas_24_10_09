@@ -1280,36 +1280,64 @@ from traceback import print_list
 # studentas turėjo neigiamų pažymių, tuomet atskirai parodykite tuos
 # neigiamus pažymius ir jų kiekį.
 
-pazymiai = []
-while True:
-    pazimys = input('pazimys.spausti ENTER: ')
-    if pazimys != '':
-        pazymiai.append(int(pazimys))
-    else:
-        break
+# pazymiai = []
+# while True:
+#     pazimys = input('pazimys.spausti ENTER: ')
+#     if pazimys != '':
+#         pazymiai.append(int(pazimys))
+#     else:
+#         break
+#
+# neigiami = []
+#
+# for pazimys in pazymiai:
+#     if int(pazimys) < 4:
+#         neigiami.append(pazimys)
+#
+# counts = []
+# for pazimys in sorted(list(dict.fromkeys(neigiami))):
+#     count = neigiami.count(pazimys)
+#     counts.append(count)
+#
+#
+# print(pazymiai)
+# if len(pazymiai) != 0:
+#     print(f'Vidurkis: {sum(pazymiai)/len(pazymiai)}')
+#     print('Neigiami pažymiai: ')
+#     for index, pazimys in enumerate(sorted(list(dict.fromkeys(neigiami)))):
+#         print(f'{pazimys}: {counts[index]}')
+#
+# else:
+#     print(f'Vidurkis: 0.')
 
-neigiami = []
+# 32.Susikurkite žodžių sąrašą. Raskite ir išveskite trumpiausią ir ilgiausią
+# žodžius, bei jų raidžių kiekius.
 
-for pazimys in pazymiai:
-    if int(pazimys) < 4:
-        neigiami.append(pazimys)
+words = ['Jurgis', 'Antanas', 'Aloyzas', 'Martynas']
 
-counts = []
-for pazimys in sorted(list(dict.fromkeys(neigiami))):
-    count = neigiami.count(pazimys)
-    counts.append(count)
+max_len = -1
+max_words = []
+for word in words:
+    if len(word) > max_len:
+        max_len = len(word)
+for word in words:
+    if len(word) == max_len:
+        max_words.append(word)
+
+lengths = []
+for index, word in enumerate(words):
+    lengths.append((len(word), index))
+
+lengths.sort()
+minlength = lengths[0][0]
+minimumLenght = []
+for index, element in enumerate(lengths):
+    if element[0] == minlength:
+        minimumLenght.append(element[1])
+min_words = [words[index] for index in minimumLenght]
 
 
-print(pazymiai)
-if len(pazymiai) != 0:
-    print(f'Vidurkis: {sum(pazymiai)/len(pazymiai)}')
-    print('Neigiami pažymiai: ')
-    for index, pazimys in enumerate(sorted(list(dict.fromkeys(neigiami)))):
-        print(f'{pazimys}: {counts[index]}')
-
-else:
-    print(f'Vidurkis: 0.')
-
+print(f'Trumpiausi(as): {str(min_words)[1:-1]}. Ilgiausi(as): {str(max_words)[1:-1]}.')
 
 
 
