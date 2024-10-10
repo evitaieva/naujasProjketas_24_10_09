@@ -1264,16 +1264,53 @@ from traceback import print_list
 # 30.Susikurkite sąrašą iš pasirinktų žodžių. Atskirose eilutėse išveskite patį
 # žodį, jo raidžių kiekį.
 
-zodziai = []
+# zodziai = []
+# while True:
+#     zodis = input('žodis.spausti ENTER: ')
+#     if zodis != '':
+#         zodziai.append(zodis)
+#     else:
+#         break
+#
+# for zodis in zodziai:
+#     print(f'{zodis}: {len(zodis)}')
+
+# 31.Susikurkite pažymių sąrašą. Šiuos pažymius leiskite įvesti vartotojui.
+# Baigus įvedimą, išveskite suvestų pažymių vidurkį. Taip pat, jeigu
+# studentas turėjo neigiamų pažymių, tuomet atskirai parodykite tuos
+# neigiamus pažymius ir jų kiekį.
+
+pazymiai = []
 while True:
-    zodis = input('žodis.spausti ENTER: ')
-    if zodis != '':
-        zodziai.append(zodis)
+    pazimys = input('pazimys.spausti ENTER: ')
+    if pazimys != '':
+        pazymiai.append(int(pazimys))
     else:
         break
 
-for zodis in zodziai:
-    print(f'{zodis}: {len(zodis)}')
+neigiami = []
+
+for pazimys in pazymiai:
+    if int(pazimys) < 4:
+        neigiami.append(pazimys)
+
+counts = []
+for pazimys in sorted(list(dict.fromkeys(neigiami))):
+    count = neigiami.count(pazimys)
+    counts.append(count)
+
+
+print(pazymiai)
+if len(pazymiai) != 0:
+    print(f'Vidurkis: {sum(pazymiai)/len(pazymiai)}')
+    print('Neigiami pažymiai: ')
+    for index, pazimys in enumerate(sorted(list(dict.fromkeys(neigiami)))):
+        print(f'{pazimys}: {counts[index]}')
+
+else:
+    print(f'Vidurkis: 0.')
+
+
 
 
 
