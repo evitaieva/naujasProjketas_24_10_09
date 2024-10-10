@@ -1254,7 +1254,7 @@ from traceback import print_list
 
 # zodziai = []
 # while True:
-#     zodis = input('Naujas žodis. Baigus, spausti ENTER: ')
+#     zodis = input('žodis.spausti ENTER: ')
 #     if zodis != '':
 #         zodziai.append(word)
 #     else:
@@ -1266,7 +1266,7 @@ from traceback import print_list
 
 zodziai = []
 while True:
-    zodis = input('Naujas žodis. Baigus, spausti ENTER: ')
+    zodis = input('žodis.spausti ENTER: ')
     if zodis != '':
         zodziai.append(zodis)
     else:
@@ -1275,13 +1275,7 @@ while True:
 for zodis in zodziai:
     print(f'{zodis}: {len(zodis)}')
 
-print("hi")
-print("hi4")
-print("hi")
-print("hi")
-print("hi")
-print("hi")
-print("hi")
+
 
 
 
