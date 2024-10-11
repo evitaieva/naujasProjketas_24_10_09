@@ -1515,12 +1515,33 @@ numbers = []
 # kodas "sys12", tuomet "Trūksta operatyviosios atminties sistemoje" ir
 # pan.
 
-codes = [('ui87', 'Grafinės sąsajos klaida navigacijoje'), ('sys12', 'Trūksta operatyviosios atminties sistemoje')]
-errors_occured = ['ui87', 'sys12']
+# codes = [('ui87', 'Grafinės sąsajos klaida navigacijoje'), ('sys12', 'Trūksta operatyviosios atminties sistemoje')]
+# # errors_occured = ['ui87', 'sys12']
+# #
+# # for code in codes:
+# #     if code[0] in errors_occured:
+# #         print(f'{code[0]}: {code[1]}')
 
-for code in codes:
-    if code[0] in errors_occured:
-        print(f'{code[0]}: {code[1]}')
+# 43.Susikurkite sąrašą sandėlio likučiams saugoti (kiekvienas atskiras narys
+# sąraše yra atskiros prekės likutis). Su kiekvienu likučiu paskaičiuokite per
+# kiek dienų bus išpirktas, jei per dieną vidutiniškai yra nuperkami 5 vnt.
+# Išveskite atsakymus atskirose eilutėse, nurodant kiek yra dabar ir kiek
+# dienų užteks jo. Pavyzdžiui, jeigu yra likučiai 74, 54 ir 32, tai 74 vnt. prekės
+# užteks maždaug 15 dienų, 54 vnt. prekės užteks maždaug 11 dienų ir t.t.
+# Pabandykite papildyti programą taip, kad į atskirą sąrašą atrinktų tas
+# prekes, kurių užteks savaitei ar mažiau, jas išveskite atskirai, pačioje
+# pabaigoje.
+
+left = [['cabels', 20], ['elddevice', 30], ['camera', 45]]
+
+for element in left:
+    print(f'{element[0]}: liko {element[1]}. Dar užteks ~ {element[1] //5 } dienoms/dienų')
+
+for_a_week = [element[0] for element in left if element[1] // 5 <= 7]
+
+if len(for_a_week) > 0:
+    print(f'Prekės kurių užteks tiks savaitei arba mažiau: {str(for_a_week)[1:-1]}')
+
 
 
 
