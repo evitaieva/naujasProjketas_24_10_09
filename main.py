@@ -1498,3 +1498,12 @@ if len(dalijasiIsTriju) !=0:
 else:
     print(f'Suma: 0. Vidurkis: 0')
 
+# 41.Susikurkite sąrašą failų pavadinimams saugoti, užpildykite jį duomenimis.
+# Įsivaizduokite kad jums reikės nuskaityti šiuos failus, todėl pirma norėsite
+# patikrinti su kuriais galite dirbti. Atrinkite į atskirą sąrašą tik tuos failus,
+# kurių galūnė yra .txt arba .json tipo. Išveskite atrinktus duomenis.
+print('____________________')
+files = ['vienas.py', 'du.txt', 'trys.word', 'keturi.json']
+failai = [file for file in files if file[-5:] == '.json' or file[-4:] == '.txt']
+print(failai)
+
