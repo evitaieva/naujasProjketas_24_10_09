@@ -1349,28 +1349,42 @@ from traceback import print_list
 # 4. Ekrane išveskite pradinius duomenis, mažiausią ir didžiausią skaičius, rastą vidurkį,
 # pirmus atrinktus skaičius ir jų vidurkį, antrus atrinktus skaičius ir jų vidurkį.
 
-numbers = []
-for number in range(100):
-    numbers.append(random.randint(56, 200))
-smallestTotal = min(numbers)
-largestTotal = max(numbers)
-averageTotal = sum(numbers)/len(numbers)
+# numbers = []
+# for number in range(100):
+#     numbers.append(random.randint(56, 200))
+# smallestTotal = min(numbers)
+# largestTotal = max(numbers)
+# averageTotal = sum(numbers)/len(numbers)
+#
+#
+# numbersBelow = [number for number in numbers if number < (sum(numbers)/len(numbers))]
+# averageBelow = sum(numbersBelow)/len(numbersBelow)
+#
+# numbersAbove = [number for number in numbers if number > (sum(numbers)/len(numbers))]
+# averageAbove = sum(numbersAbove)/len(numbersAbove)
+#
+# print(f'Skaičiai: {numbers}')
+# print(f'Mažiausias: {smallestTotal}. Didžiausias: {largestTotal}. Vidurkis: {averageTotal}.')
+#
+# print(f'Skaičiai žemiau vidurkio: {numbersBelow}')
+# print(f'vidurkis: {averageBelow}')
+#
+# print(f'Skaičiai aukščiau vidurkio: {numbersAbove}')
+# print(f'vidurkis: {averageAbove}')
 
+# 34.Susikurkite žodžių masyvą. Išveskite per kiek simbolių yra ilgesnis
+# ilgiausias žodis už trumpiausią. Tarkime ilgiausias yra “kompiuteris” (11
+# simbolių), o trumpiausias “medis” (5), skirtumas tarp jų 11 - 5 = 6
+# simboliai.
 
-numbersBelow = [number for number in numbers if number < (sum(numbers)/len(numbers))]
-averageBelow = sum(numbersBelow)/len(numbersBelow)
+words = ['jurgeli', 'meistreli', 'mokyk', 'savo', 'vaikus']
 
-numbersAbove = [number for number in numbers if number > (sum(numbers)/len(numbers))]
-averageAbove = sum(numbersAbove)/len(numbersAbove)
+minLengths = [min(len(word) for word in words)]
+minLengths.sort()
+minLength = minLengths[0]
 
-print(f'Skaičiai: {numbers}')
-print(f'Mažiausias: {smallestTotal}. Didžiausias: {largestTotal}. Vidurkis: {averageTotal}.')
+maxLengths = [max(len(word) for word in words)]
+maxLengths.sort()
+maxLength = maxLengths[-1]
 
-print(f'Skaičiai žemiau vidurkio: {numbersBelow}')
-print(f'vidurkis: {averageBelow}')
-
-print(f'Skaičiai aukščiau vidurkio: {numbersAbove}')
-print(f'vidurkis: {averageAbove}')
-
-
-
+print(f'Ilgiausias: {maxLength}. Trumpiausias: {minLength}. Skirtumas: {maxLength - minLength}')
