@@ -1377,14 +1377,54 @@ from traceback import print_list
 # simbolių), o trumpiausias “medis” (5), skirtumas tarp jų 11 - 5 = 6
 # simboliai.
 
-words = ['jurgeli', 'meistreli', 'mokyk', 'savo', 'vaikus']
+# words = ['jurgeli', 'meistreli', 'mokyk', 'savo', 'vaikus']
+#
+# minLengths = [min(len(word) for word in words)]
+# minLengths.sort()
+# minLength = minLengths[0]
+#
+# maxLengths = [max(len(word) for word in words)]
+# maxLengths.sort()
+# maxLength = maxLengths[-1]
+#
+# print(f'Ilgiausias: {maxLength}. Trumpiausias: {minLength}. Skirtumas: {maxLength - minLength}')
 
-minLengths = [min(len(word) for word in words)]
-minLengths.sort()
-minLength = minLengths[0]
+# 35.Susikurkite dviejų studentų pažymių sąrašus. Šią informaciją leiskite
+# suvesti vartotojui. Raskite kurio studento vidurkis yra geresnis. Taip pat,
+# ar kuris iš jų (ar abu) turi neigiamų pažymių.
 
-maxLengths = [max(len(word) for word in words)]
-maxLengths.sort()
-maxLength = maxLengths[-1]
+grades1 = []
+grades2 = []
 
-print(f'Ilgiausias: {maxLength}. Trumpiausias: {minLength}. Skirtumas: {maxLength - minLength}')
+while True:
+    grade1 = input('parasykite pirmojo mokinio pažymį. Baigus, įvesti tuščią lauką: ')
+    if grade1 != '':
+        grades1.append(int(grade1))
+    else:
+        break
+
+while True:
+    grade2 = input('parasykite antrojo mokinio pažymį. Baigus, įvesti tuščią lauką: ')
+    if grade2 != '':
+        grades2.append(int(grade2))
+    else:
+        break
+
+negative_1 = [grade for grade in grades1 if grade <= 4]
+if len(negative_1) != 0:
+    has_negatives_1 = True
+else:
+    has_negatives_1 = False
+
+negative_2 = [grade for grade in grades2 if grade <= 4]
+if len(negative_2) != 0:
+    has_negatives_2 = True
+else:
+    has_negatives_2 = False
+
+print(f'Pirmojo vidurkis: {sum(grades1)/len(grades1)}. Antrojo vidurkis: {sum(grades2)/len(grades2)}')
+
+if has_negatives_1 is True:
+    print(f'Pirmasis turi neigiamų pažymių: {str(negative_1)[1:-1]}')
+if has_negatives_2 is True:
+    print(f'Antrasis turi neigiamų pažymių: {str(negative_2)[1:-1]}')
