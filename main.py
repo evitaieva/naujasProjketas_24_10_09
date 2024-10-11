@@ -1393,38 +1393,50 @@ from traceback import print_list
 # suvesti vartotojui. Raskite kurio studento vidurkis yra geresnis. Taip pat,
 # ar kuris iš jų (ar abu) turi neigiamų pažymių.
 
-grades1 = []
-grades2 = []
+# grades1 = []
+# grades2 = []
+#
+# while True:
+#     grade1 = input('parasykite pirmojo mokinio pažymį. Baigus, įvesti tuščią lauką: ')
+#     if grade1 != '':
+#         grades1.append(int(grade1))
+#     else:
+#         break
+#
+# while True:
+#     grade2 = input('parasykite antrojo mokinio pažymį. Baigus, įvesti tuščią lauką: ')
+#     if grade2 != '':
+#         grades2.append(int(grade2))
+#     else:
+#         break
+#
+# negative_1 = [grade for grade in grades1 if grade <= 4]
+# if len(negative_1) != 0:
+#     has_negatives_1 = True
+# else:
+#     has_negatives_1 = False
+#
+# negative_2 = [grade for grade in grades2 if grade <= 4]
+# if len(negative_2) != 0:
+#     has_negatives_2 = True
+# else:
+#     has_negatives_2 = False
+#
+# print(f'Pirmojo vidurkis: {sum(grades1)/len(grades1)}. Antrojo vidurkis: {sum(grades2)/len(grades2)}')
+#
+# if has_negatives_1 is True:
+#     print(f'Pirmasis turi neigiamų pažymių: {str(negative_1)[1:-1]}')
+# if has_negatives_2 is True:
+#     print(f'Antrasis turi neigiamų pažymių: {str(negative_2)[1:-1]}')
 
-while True:
-    grade1 = input('parasykite pirmojo mokinio pažymį. Baigus, įvesti tuščią lauką: ')
-    if grade1 != '':
-        grades1.append(int(grade1))
-    else:
-        break
+# 36.Susikurkite skaičių masyvą ir užpildykite jį atsitiktiniais skaičiais. Raskite
+# visų skaičių, kurie dalinasi iš 4 sumą.
 
-while True:
-    grade2 = input('parasykite antrojo mokinio pažymį. Baigus, įvesti tuščią lauką: ')
-    if grade2 != '':
-        grades2.append(int(grade2))
-    else:
-        break
+numbers = []
 
-negative_1 = [grade for grade in grades1 if grade <= 4]
-if len(negative_1) != 0:
-    has_negatives_1 = True
-else:
-    has_negatives_1 = False
+for number in range(random.randint(1, 10)):
+    numbers.append(random.randint(0, 100))
 
-negative_2 = [grade for grade in grades2 if grade <= 4]
-if len(negative_2) != 0:
-    has_negatives_2 = True
-else:
-    has_negatives_2 = False
+divisible = [number for number in numbers if number % 4 == 0]
 
-print(f'Pirmojo vidurkis: {sum(grades1)/len(grades1)}. Antrojo vidurkis: {sum(grades2)/len(grades2)}')
-
-if has_negatives_1 is True:
-    print(f'Pirmasis turi neigiamų pažymių: {str(negative_1)[1:-1]}')
-if has_negatives_2 is True:
-    print(f'Antrasis turi neigiamų pažymių: {str(negative_2)[1:-1]}')
+print(f'Besidalinančių iš 4 suma: {sum(divisible)}')
