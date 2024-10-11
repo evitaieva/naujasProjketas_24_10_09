@@ -1532,15 +1532,23 @@ numbers = []
 # prekes, kurių užteks savaitei ar mažiau, jas išveskite atskirai, pačioje
 # pabaigoje.
 
-left = [['cabels', 20], ['elddevice', 30], ['camera', 45]]
+# left = [['cabels', 20], ['elddevice', 30], ['camera', 45]]
+#
+# for element in left:
+#     print(f'{element[0]}: liko {element[1]}. Dar užteks ~ {element[1] //5 } dienoms/dienų')
+#
+# for_a_week = [element[0] for element in left if element[1] // 5 <= 7]
+#
+# if len(for_a_week) > 0:
+#     print(f'Prekės kurių užteks tiks savaitei arba mažiau: {str(for_a_week)[1:-1]}')
 
-for element in left:
-    print(f'{element[0]}: liko {element[1]}. Dar užteks ~ {element[1] //5 } dienoms/dienų')
+# 44.Susikurkite sąrašą norimiems žodžiams saugoti. Užpildykite šį sąrašą
+# duomenimis. Į kitą sąrašą atrinkite tuos žodžius, kurie yra trumpi (sudaro
+# mažiau nei 5 raidės). Išveskite pradinius duomenis ir atrinktus.
 
-for_a_week = [element[0] for element in left if element[1] // 5 <= 7]
-
-if len(for_a_week) > 0:
-    print(f'Prekės kurių užteks tiks savaitei arba mažiau: {str(for_a_week)[1:-1]}')
+words = ['maryte', 'melnikaite', 'kovotoja', 'narsi', 'as', 'tu', 'jis']
+trumpi = [word for word in words if len(word) < 5]
+print(f'Pradiniai: {words}. Trumpi: {trumpi}')
 
 
 
