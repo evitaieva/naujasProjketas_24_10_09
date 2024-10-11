@@ -1476,8 +1476,25 @@ numbers = []
 # Papildykite programą taip, kad rastumėte visų raidžių kiekį (pvz yra žodžiai
 # "medis" ir "alus", 5 ir 4 raidės atitinkamai, o jas sudėjus gaunasi 9 raidės).
 
-words = ['ant', 'kalno', 'mura', 'joja', 'lietuviai']
-lengths = [len(word) for word in words]
-for word in words:
-    print(f'{word}: {len(word)}')
-print(f'suma: {sum(lengths)}')
+# words = ['ant', 'kalno', 'mura', 'joja', 'lietuviai']
+# lengths = [len(word) for word in words]
+# for word in words:
+#     print(f'{word}: {len(word)}')
+# print(f'suma: {sum(lengths)}')
+
+# 40.Susikurkite skaičių sąrašą ir užpildykite duomenimis. Raskite visų skaičių,
+# kurie dalinasi iš 3 sumą ir vidurkį. Išveskite pradinius duomenis ir gautus
+# atsakymus.
+
+numbers = []
+
+for number in range(random.randint(1, 10)):
+    numbers.append(random.randint(0, 100))
+
+dalijasiIsTriju = [number for number in numbers if number % 3 == 0]
+print(numbers)
+if len(dalijasiIsTriju) !=0:
+    print(f'Suma: {sum(dalijasiIsTriju)}. Vidurkis: {sum(dalijasiIsTriju)/len(dalijasiIsTriju)}')
+else:
+    print(f'Suma: 0. Vidurkis: 0')
+
