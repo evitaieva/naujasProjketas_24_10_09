@@ -1313,7 +1313,7 @@ from traceback import print_list
 # 32.Susikurkite žodžių sąrašą. Raskite ir išveskite trumpiausią ir ilgiausią
 # žodžius, bei jų raidžių kiekius.
 
-words = ['Jurgis', 'Antanas', 'Aloyzas', 'Martynas']
+words = ['zuokas', 'simasius', 'benkunskas', 'olekas']
 
 max_len = -1
 max_words = []
