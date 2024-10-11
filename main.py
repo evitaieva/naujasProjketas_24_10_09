@@ -1313,35 +1313,64 @@ from traceback import print_list
 # 32.Susikurkite žodžių sąrašą. Raskite ir išveskite trumpiausią ir ilgiausią
 # žodžius, bei jų raidžių kiekius.
 
-words = ['zuokas', 'simasius', 'benkunskas', 'olekas']
+# words = ['zuokas', 'simasius', 'benkunskas', 'olekas']
+#
+# max_len = -1
+# max_words = []
+# for word in words:
+#     if len(word) > max_len:
+#         max_len = len(word)
+# for word in words:
+#     if len(word) == max_len:
+#         max_words.append(word)
+#
+# lengths = []
+# for index, word in enumerate(words):
+#     lengths.append((len(word), index))
+#
+# lengths.sort()
+# minlength = lengths[0][0]
+# minimumLenght = []
+# for index, element in enumerate(lengths):
+#     if element[0] == minlength:
+#         minimumLenght.append(element[1])
+# min_words = [words[index] for index in minimumLenght]
+#
+#
+# print(f'Trumpiausi(as): {str(min_words)[1:-1]}. Ilgiausi(as): {str(max_words)[1:-1]}.')
 
-max_len = -1
-max_words = []
-for word in words:
-    if len(word) > max_len:
-        max_len = len(word)
-for word in words:
-    if len(word) == max_len:
-        max_words.append(word)
+# 33.Sugeneruokite 100-ą atsitiktinių skaičių ir sukelkite visus tuos skaičius į
+# sąrašą. Atlikite šiuos veiksmus:
+# 1. Raskite mažiausią skaičių, didžiausią skaičių, bei vidurkį.
+# 2. Tuomet atrinkite į atskirą sąrašą skaičius, kurie žemesni nei vidurkis. Raskite šių skaičių
+# vidurkį.
+# 3. Taip pat, atrinkite į dar vieną sąrašą skaičius, kurie didesni nei vidurkis. Raskite šių skaičių
+# vidurkį.
+# 4. Ekrane išveskite pradinius duomenis, mažiausią ir didžiausią skaičius, rastą vidurkį,
+# pirmus atrinktus skaičius ir jų vidurkį, antrus atrinktus skaičius ir jų vidurkį.
 
-lengths = []
-for index, word in enumerate(words):
-    lengths.append((len(word), index))
-
-lengths.sort()
-minlength = lengths[0][0]
-minimumLenght = []
-for index, element in enumerate(lengths):
-    if element[0] == minlength:
-        minimumLenght.append(element[1])
-min_words = [words[index] for index in minimumLenght]
+numbers = []
+for number in range(100):
+    numbers.append(random.randint(56, 200))
+smallestTotal = min(numbers)
+largestTotal = max(numbers)
+averageTotal = sum(numbers)/len(numbers)
 
 
-print(f'Trumpiausi(as): {str(min_words)[1:-1]}. Ilgiausi(as): {str(max_words)[1:-1]}.')
+numbersBelow = [number for number in numbers if number < (sum(numbers)/len(numbers))]
+averageBelow = sum(numbersBelow)/len(numbersBelow)
 
+numbersAbove = [number for number in numbers if number > (sum(numbers)/len(numbers))]
+averageAbove = sum(numbersAbove)/len(numbersAbove)
 
+print(f'Skaičiai: {numbers}')
+print(f'Mažiausias: {smallestTotal}. Didžiausias: {largestTotal}. Vidurkis: {averageTotal}.')
 
+print(f'Skaičiai žemiau vidurkio: {numbersBelow}')
+print(f'vidurkis: {averageBelow}')
 
+print(f'Skaičiai aukščiau vidurkio: {numbersAbove}')
+print(f'vidurkis: {averageAbove}')
 
 
 
