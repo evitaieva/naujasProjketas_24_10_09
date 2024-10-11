@@ -1446,12 +1446,30 @@ from traceback import print_list
 # kvadratą.
 numbers = []
 
-for number in range(random.randint(1, 10)):
-    numbers.append(random.randint(0, 100))
+# for number in range(random.randint(1, 10)):
+#     numbers.append(random.randint(0, 100))
+#
+# for number in numbers:
+#     if number % 2 != 0:
+#         print(number)
+#     else:
+#         print(f'{number}: {number**2}')
 
-for number in numbers:
-    if number % 2 != 0:
-        print(number)
+# 38.Susikurkite studento pažymių sąrašą ir užpildykite jį duomenimis
+# (atsitiktiniais arba kokius įrašysite). Išveskite kiekvieną pažymį atskiroje
+# eilutėje. Prie kiekvieno pažymio nurodykite ar tai teigiamas, ar neigiamas
+# pažymys. Taip pat, jeigu neigiamas pažymys, tuomet dar nurodykite kiek
+# balų trūko iki teigiamo pažymio. Teigiamas pažymys skaitosi 5 balai.
+
+grades = []
+
+for grade in range(random.randint(1, 10)):
+    grades.append(random.randint(0, 10))
+
+for grade in grades:
+    if grade < 5:
+        print(f'{grade}: neigiamas. Truko {5-grade} balu/balo')
     else:
-        print(f'{number}: {number**2}')
+        print(f'{grade}: teigiamas')
+
 
