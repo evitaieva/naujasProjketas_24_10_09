@@ -1486,24 +1486,41 @@ numbers = []
 # kurie dalinasi iš 3 sumą ir vidurkį. Išveskite pradinius duomenis ir gautus
 # atsakymus.
 
-numbers = []
-
-for number in range(random.randint(1, 10)):
-    numbers.append(random.randint(0, 100))
-
-dalijasiIsTriju = [number for number in numbers if number % 3 == 0]
-print(numbers)
-if len(dalijasiIsTriju) !=0:
-    print(f'Suma: {sum(dalijasiIsTriju)}. Vidurkis: {sum(dalijasiIsTriju)/len(dalijasiIsTriju)}')
-else:
-    print(f'Suma: 0. Vidurkis: 0')
+# numbers = []
+#
+# for number in range(random.randint(1, 10)):
+#     numbers.append(random.randint(0, 100))
+#
+# dalijasiIsTriju = [number for number in numbers if number % 3 == 0]
+# print(numbers)
+# if len(dalijasiIsTriju) !=0:
+#     print(f'Suma: {sum(dalijasiIsTriju)}. Vidurkis: {sum(dalijasiIsTriju)/len(dalijasiIsTriju)}')
+# else:
+#     print(f'Suma: 0. Vidurkis: 0')
 
 # 41.Susikurkite sąrašą failų pavadinimams saugoti, užpildykite jį duomenimis.
 # Įsivaizduokite kad jums reikės nuskaityti šiuos failus, todėl pirma norėsite
 # patikrinti su kuriais galite dirbti. Atrinkite į atskirą sąrašą tik tuos failus,
 # kurių galūnė yra .txt arba .json tipo. Išveskite atrinktus duomenis.
-print('____________________')
-files = ['vienas.py', 'du.txt', 'trys.word', 'keturi.json']
-failai = [file for file in files if file[-5:] == '.json' or file[-4:] == '.txt']
-print(failai)
+
+# files = ['vienas.py', 'du.txt', 'trys.word', 'keturi.json']
+# failai = [file for file in files if file[-5:] == '.json' or file[-4:] == '.txt']
+# print(failai)
+
+
+# 42.Susikurkite sąrašą įvykusių klaidų kodams saugoti ir užpildykite šį masyvą
+# duomenimis. Tuomet išveskite visas sukauptas klaidas administratoriui,
+# taip, kad jis suprastų kas per klaidos įvyko. Pavyzdžiui, jeigu yra kodas
+# "ui87", tai kad išvestų "Grafinės sąsajos klaida navigacijoje", arba jeigu
+# kodas "sys12", tuomet "Trūksta operatyviosios atminties sistemoje" ir
+# pan.
+
+codes = [('ui87', 'Grafinės sąsajos klaida navigacijoje'), ('sys12', 'Trūksta operatyviosios atminties sistemoje')]
+errors_occured = ['ui87', 'sys12']
+
+for code in codes:
+    if code[0] in errors_occured:
+        print(f'{code[0]}: {code[1]}')
+
+
 
