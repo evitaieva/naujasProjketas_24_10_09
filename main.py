@@ -1432,11 +1432,26 @@ from traceback import print_list
 # 36.Susikurkite skaičių masyvą ir užpildykite jį atsitiktiniais skaičiais. Raskite
 # visų skaičių, kurie dalinasi iš 4 sumą.
 
+# numbers = []
+#
+# for number in range(random.randint(1, 10)):
+#     numbers.append(random.randint(0, 100))
+#
+# divisible = [number for number in numbers if number % 4 == 0]
+#
+# print(f'Besidalinančių iš 4 suma: {sum(divisible)}')
+
+# 37.Susikurkite skaičių masyvą ir užpildykite jį duomenimis. Išveskite visus
+# skaičius atskirose eilutėse. Prie kiekvieno lyginio skaičiaus dar išvedant jo
+# kvadratą.
 numbers = []
 
 for number in range(random.randint(1, 10)):
     numbers.append(random.randint(0, 100))
 
-divisible = [number for number in numbers if number % 4 == 0]
+for number in numbers:
+    if number % 2 != 0:
+        print(number)
+    else:
+        print(f'{number}: {number**2}')
 
-print(f'Besidalinančių iš 4 suma: {sum(divisible)}')
