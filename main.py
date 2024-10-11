@@ -1461,15 +1461,23 @@ numbers = []
 # pažymys. Taip pat, jeigu neigiamas pažymys, tuomet dar nurodykite kiek
 # balų trūko iki teigiamo pažymio. Teigiamas pažymys skaitosi 5 balai.
 
-grades = []
+# grades = []
+#
+# for grade in range(random.randint(1, 10)):
+#     grades.append(random.randint(0, 10))
+#
+# for grade in grades:
+#     if grade < 5:
+#         print(f'{grade}: neigiamas. Truko {5-grade} balu/balo')
+#     else:
+#         print(f'{grade}: teigiamas')
+# 39.Susikurkite žodžių sąrašą ir užpildykite duomenimis. Išveskite visus
+# žodžius ekrane, nurodant iš kiek raidžių kiekvienas šis žodis yra sudarytas.
+# Papildykite programą taip, kad rastumėte visų raidžių kiekį (pvz yra žodžiai
+# "medis" ir "alus", 5 ir 4 raidės atitinkamai, o jas sudėjus gaunasi 9 raidės).
 
-for grade in range(random.randint(1, 10)):
-    grades.append(random.randint(0, 10))
-
-for grade in grades:
-    if grade < 5:
-        print(f'{grade}: neigiamas. Truko {5-grade} balu/balo')
-    else:
-        print(f'{grade}: teigiamas')
-
-
+words = ['ant', 'kalno', 'mura', 'joja', 'lietuviai']
+lengths = [len(word) for word in words]
+for word in words:
+    print(f'{word}: {len(word)}')
+print(f'suma: {sum(lengths)}')
